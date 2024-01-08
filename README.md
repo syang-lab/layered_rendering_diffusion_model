@@ -1,5 +1,4 @@
 # layered rendering diffusion model
-unofficial implement of layered rendering diffusion model \
-the implementation is in this colab: https://drive.google.com/file/d/1zafIIvxUIHSQWbw7TCRzijPcGIiWqowR/view?usp=share_link \
-
-further improvements of the layered rendering diffusion model are to be released
+Unofficial implementation of the Layered Rendering Diffusion Model. \
+You can find the implementation in this Colab notebook.: https://drive.google.com/file/d/1zafIIvxUIHSQWbw7TCRzijPcGIiWqowR/view?usp=share_link 
+Enhancements to the Layered Rendering Diffusion Model will be released soon.
