@@ -109,7 +109,7 @@ class LRDiff(nn.Module):
             delta_image=delta.detach()
             delta=torch.mean(delta,dim=(2,3))
             delta=delta_strength*delta
-            eps=torch.einsum("bc,bcij->bcij",delta, 2*(masks-1))
+            eps=torch.einsum("bc,bcij->bcij",delta, 2*masks-1)
             
             #normal distributation
             eps_latent=self.vae.encode(eps).latent_dist.sample(generator=generator)*0.18215
