@@ -8,11 +8,11 @@ You can find the implementation in this Colab notebook:
 ###Related Topics
 Diffuse Model: Physical Intuation \
 Models \
-Forward process and Backward process
-Schedular can be modified
-Latent Diffuse
-Unet, VAE, CLIP text encoder
-Tasks
-Problems and Improvements: control the generation process
-Rendering Diffusion Model
-Training: 1.train the Unet model 2.take pretrained VAE and text embedding model
+Forward process and Backward process \
+Schedular can be modified \
+Latent Diffuse \
+Unet, VAE, CLIP text encoder \
+Tasks \
+Problems and Improvements: control the generation process \
+Rendering Diffusion Model \
+Training: 1.train the Unet model 2.take pretrained VAE and text embedding model \
