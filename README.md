@@ -51,7 +51,7 @@ Since the paper did not published the implementation. Here I implement the paper
 ## Result of this Implementation
 This is the image generated in the <a href="https://drive.google.com/file/d/1KcNvrjh7k5G4FFbzeMfdGruA-o0Y4XZB/view?usp=share_link">layer rendering diffusion model colab </a>
 <figure>
-  <img src="layout.pdf">
+  <img src="layout.png">
 </figure>
 
 
