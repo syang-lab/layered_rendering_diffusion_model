@@ -1,15 +1,19 @@
 # Layered Rendering Diffusion Model
 Unofficial implementation of the paper "Layered Rendering Diffusion Model for Zero-Shot Guided Image Synthesis". 
 
-You can find the implementation in this Colab notebook:
+You can find the implementation in this Colab notebook, modify the stable diffuse model from huggingface:
 <a href="https://drive.google.com/file/d/1KcNvrjh7k5G4FFbzeMfdGruA-o0Y4XZB/view?usp=share_link">layer rendering diffusion model </a>
 
 ## Objective of the Model
-Control the layout of the images generated from difffuse model, without retraining or find tunning and make better sementic alignment.
+Control the layout of the images generated from difffuse model, ***without retraining or fine tunning*** and make better sementic alignment.
 
 ## Evaluation Matrix
-CLIP score: text image sementic alignment
-IOU: layout
+CLIP score and T2I-Sim: text image sementic alignment
+IOU: layout overlay
+AP: generate right class
+
+## Evaluation Dataset
+1134 captions with objects, with bonding box or masks.
 
 ## Diffuse Model
 The diffuse model consists of two distinct processes: forward and reverse (generation). Understanding the diffuse process from the physical perspective reveals that the forward process mimics the diffusion of pollen particles in water. During this phase, the diffuse model consistently introduces random noise into the system. In contrast, the reverse (generation) process is designed to entirely reverse the diffusion process, allowing for the collection of pollen. This reversal entails retracing the movements or distribution of diffusing particles in the opposite direction, ultimately restoring the initial configuration.
@@ -36,6 +40,20 @@ The algorithm of layer rendering model is shown below:
 <figure>
   <img src="Fig-algorithm.png">
 </figure>
+
+
+## Unoffical Implementation
+Since the paper did not published the implementation. Here I implement the paper without strickly following the algorithm, because the model description part is confusing. Therefore, this implementation take the essense of the algorithms that add the vision guidance to the noize image in the latent space. The current implementation following the steps below:
+1. only modify the "update_attention" module in the Unet, select the attension map with topk intensities, and go through a single sampling step with layout box and text caption, to generate the vision guidance. The vision guidance is then used to weight the mask.
+2. the weighted mask is then been added to the random noise for image generation.
+3. the following algorithm excatelly follows the algorithm shown above.
+
+## Result of this Implementation
+This is the image generated in the <a href="https://drive.google.com/file/d/1KcNvrjh7k5G4FFbzeMfdGruA-o0Y4XZB/view?usp=share_link">layer rendering diffusion model colab </a>
+<figure>
+  <img src="layout.pdf">
+</figure>
+
 
 
 
