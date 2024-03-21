@@ -44,7 +44,7 @@ The algorithm of layer rendering model is shown below:
 
 ## Unoffical Implementation
 Since the paper did not published the implementation. Here I implement the paper without strickly following the algorithm, because the model description part is confusing. Therefore, this implementation take the essense of the algorithms that add the vision guidance to the noize image in the latent space. The current implementation following the steps below:
-1. only modify the "update_attention" module in the Unet, select the attension map with topk intensities, and go through a single sampling step with layout box and text caption, to generate the vision guidance. The vision guidance is then used to weight the mask.
+1. only modify the "up_attention" module in the Unet, select the attension map with topk intensities, and go through a single sampling step with layout box and text caption, to generate the vision guidance. The vision guidance is then used to weight the mask.
 2. the weighted mask is then been added to the random noise for image generation.
 3. the following algorithm excatelly follows the algorithm shown above.
 
